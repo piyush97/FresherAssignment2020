@@ -1,11 +1,14 @@
 package com.example.demo.Controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import com.example.demo.Model.NewsLetter;
 import com.example.demo.Repositories.NewsLetterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -46,7 +49,4 @@ public class NewsLetterController {
         newsLetterRepository.deleteById(newsLetterId);
         return "Subscription Deleted";
     }
-
-
-
-}
+   }
