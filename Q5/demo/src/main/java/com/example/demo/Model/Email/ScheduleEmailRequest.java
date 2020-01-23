@@ -1,10 +1,16 @@
-package com.example.demo.Email;
+package com.example.demo.Model.Email;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
+@Getter @Setter @NoArgsConstructor
 public class ScheduleEmailRequest {
     @Email
     @NotEmpty
@@ -17,5 +23,9 @@ public class ScheduleEmailRequest {
     private String body;
 
     @NotNull
-    private LocalDateTime dateTime
+    private LocalDateTime dateTime;
+
+    @NotNull
+    private ZoneId timeZone;
+
 }
