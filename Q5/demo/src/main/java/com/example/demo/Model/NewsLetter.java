@@ -14,6 +14,11 @@ public class NewsLetter {
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     private @NonNull  int newsLetterId;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private @NonNull String name;
 
     public NewsLetter(int newsLetterId, String name) {
