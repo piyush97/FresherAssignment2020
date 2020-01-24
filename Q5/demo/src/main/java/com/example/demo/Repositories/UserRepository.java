@@ -1,5 +1,6 @@
 package com.example.demo.Repositories;
 
+import com.example.demo.Model.MyUserDetails;
 import com.example.demo.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -9,6 +10,6 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 //    List<NewsLetter> findByTitleContaingOrContentContaining(String text, String textAgain);
-Optional<User> findByEmailId(String emailId);
+Optional<User> findByUserName(String userName);
 
 }

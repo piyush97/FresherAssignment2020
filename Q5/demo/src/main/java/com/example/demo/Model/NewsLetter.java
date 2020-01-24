@@ -15,10 +15,6 @@ public class NewsLetter {
 
     private @NonNull  int newsLetterId;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     private @NonNull String name;
 
     public NewsLetter(int newsLetterId, String name) {
