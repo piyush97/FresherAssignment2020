@@ -12,11 +12,11 @@ public class SubscriptionsController {
 
     @Autowired
     SubscriptionRepository subscriptionRepository;
-
-    @GetMapping("/subscriptions")
-    public List<Subscription> index() {
-        return subscriptionRepository.findAll();
-    }
+//
+//    @GetMapping("/subscriptions")
+//    public List<Subscription> index() {
+//        return subscriptionRepository.findAll();
+//    }
 
     @GetMapping("/subscriptions/{id}")
     public Subscription show(@PathVariable String id) throws Exception{
