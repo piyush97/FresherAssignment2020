@@ -24,7 +24,7 @@ public class SubscriptionsController {
         return subscriptionRepository.findById(subscriptionId).orElseThrow(Exception::new);
     }
 
-    @PostMapping("/subscriptions")
+    @GetMapping("/subscriptions")
     public Subscription create(@RequestBody Subscription subscription){
 //        String name = newsLetter.get("name");
         return subscriptionRepository.save(subscription);
