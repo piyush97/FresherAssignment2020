@@ -1,21 +1,42 @@
-//package com.example.demo.Producer;
 //
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.kafka.core.KafkaTemplate;
-//import org.springframework.stereotype.Component;
+//import com.bizdirect.KafkaContextHolder;
+//import com.bizdirect.commons.constant.BizdirectCommonBeans;
+//import com.gonuclei.constants.Constants;
 //
-//@Component
-//public class Sender {
+//import org.springframework.beans.factory.annotation.Qualifier;
+//import org.springframework.context.annotation.DependsOn;
+//import org.springframework.stereotype.Service;
 //
-//    private static final Logger LOGGER = LoggerFactory.getLogger(Sender.class);
+///**
+// * The type My producer.
+// */
+//@Service
+//@DependsOn(BizdirectCommonBeans.KafkaAutoConfigBeans.KAFKA_AUTO_CONFIGURATION_BEAN)
+//public class MyProducer {
 //
-//    @Autowired
-//    private KafkaTemplate<String, String> kafkaTemplate;
+//    /**
+//     * The kafka context holder.
+//     */
+//    private final KafkaContextHolder kafkaContextHolder;
 //
-//    public void send(String topic, String payload) {
-//        LOGGER.info("sending payload='{}' to topic='{}'", payload, topic);
-//        kafkaTemplate.send(topic, payload);
+//    /**
+//     * Instantiates a new notification kafka producer.
+//     *
+//     * @param kafkaContextHolder the kafka context holder
+//     */
+//    public MyProducer(
+//            final @Qualifier(Constants.KAFKA_CONSTANT_HOLDER) KafkaContextHolder kafkaContextHolder) {
+//        super();
+//        this.kafkaContextHolder = kafkaContextHolder;
+//    }
+//
+//    /**
+//     * Send bizdirect generic request message.
+//     *
+//     * @param topic   the topic
+//     * @param message the message
+//     */
+//    public void sendMessage(final String topic, final String message) {
+//        kafkaContextHolder.getKafkaTemplate().send(topic, message);
 //    }
 //}
